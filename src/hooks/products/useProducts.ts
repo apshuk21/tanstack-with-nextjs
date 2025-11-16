@@ -20,7 +20,7 @@ export const productKeys = {
 export function useProducts() {
   console.log("🔵 useProducts hook called");
 
-  return useQuery<IProduct, Error>({
+  return useQuery<IProduct[], Error>({
     queryKey: productKeys.lists(),
     queryFn: () => {
       console.log("🟢 API call executing");

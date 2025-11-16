@@ -1,16 +1,24 @@
 import { ITodo } from "@/interfaces/todos";
 
-export function Todo({ todo }: { todo: ITodo }) {
+export function Todo({
+  todo,
+  showCheckbox = true,
+}: {
+  todo: ITodo;
+  showCheckbox?: boolean;
+}) {
   return (
     <div className="p-3 bg-white rounded-md shadow-sm flex items-center justify-between">
       <div className="flex items-center space-x-3">
-        <input
-          type="checkbox"
-          checked={todo.completed}
-          readOnly
-          className="h-4 w-4 text-blue-600 rounded"
-          aria-label={todo.completed ? "Completed" : "Not completed"}
-        />
+        {showCheckbox && (
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            readOnly
+            className="h-4 w-4 text-blue-600 rounded"
+            aria-label={todo.completed ? "Completed" : "Not completed"}
+          />
+        )}
         <div>
           <div
             className={`text-sm ${

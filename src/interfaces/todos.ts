@@ -3,6 +3,7 @@ export interface ITodo {
   text: string;
   completed: boolean;
   userId: string;
+  slug: string;
 }
 
 export interface IToggleTodoDto {

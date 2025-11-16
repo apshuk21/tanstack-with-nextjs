@@ -18,7 +18,7 @@ export const todosKeys = {
  * @returns Query result with products data, loading state, and error
  */
 export function useTodos() {
-  return useQuery<ITodo, Error>({
+  return useQuery<ITodo[], Error>({
     queryKey: todosKeys.lists(),
     queryFn: () => {
       return getAllTodos();

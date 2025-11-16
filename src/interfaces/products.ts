@@ -9,4 +9,5 @@ export interface IProduct {
   name: string;
   price: number;
   inventory: number;
+  slug: string;
 }
